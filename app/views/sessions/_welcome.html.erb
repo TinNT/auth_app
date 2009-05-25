@@ -1,0 +1,11 @@
+<div id="login">
+  <% if logged_in? %>
+
+    Welcome,
+    <%= current_user.email.sub(/@.*/,'') %> |
+    <%= link_to 'sign out', logout_path %>
+
+  <% else %>
+    | <%= link_to 'register', signup_path %> | <%= link_to('sign in', login_path) %> |
+  <% end %>
+</div>

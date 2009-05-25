@@ -1,0 +1,39 @@
+<p>
+  <b>Title:</b>
+  <%=h @post.title %>
+</p>
+<p>
+  <b>Created at:</b>
+  <%=nice_date @post.created_at %>
+</p>
+<p>
+  <b>Author:</b>
+  <%=h @post.user.email %>
+</p>
+<p>
+  <b>Body:</b>
+  <%=h @post.body %>
+</p>
+
+<% if @post.editable?(current_user.id) %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<%end%>
+<%= link_to 'Back', posts_path %>
+<br/>
+<% 
+comments = @post.comments.all 
+cycle = 0
+%>
+<%= link_to "Comment (#{comments.length})", post_comments_path(@post),:title => "Comment for this post" %>
+<%= "<div class='all_comment'> All comments </div>" if comments.length > 0 %>
+<% comments.each do |comment| %>
+  <% cycle +=1 %>
+  <div class="detail_comment <%= cycle % 2 == 0 ? "comment_on" : "comment_off" %>">
+    Author: <%= h comment.user.email %>
+    <br/>
+    Created at: <%= nice_date comment.created_at %>
+    <br/>
+    Body: <%= h comment.body %>
+  </div>
+
+<%end%>

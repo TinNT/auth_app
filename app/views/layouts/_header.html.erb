@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <% # TODO: Should redirect to UPGRADE page if IE<=4 -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Create professional quality ads yourself" />
+  <meta name="keywords" content="advertising, web ads, self advertising,
+        banner ads, video ads" />
+  <title><%= params[:controller].titleize %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+
+<div class="header_container"><!-- open .container -->
+  
+    <%= render :partial => "sessions/welcome" %>
+    <div class="header_title"> Blog Post Demo</div>
+
+</div>

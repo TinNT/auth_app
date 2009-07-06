@@ -40,11 +40,14 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+# Email settings for Google gmail
+ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-	:address        => 'smtp.1and1.com',    # default: localhost
-	:port           => '587',                        # default: 25
-	:user_name      => 'engineering@fourspots.com',
-	:password       => 'March2008',
-	:authentication => :login,             # :plain, :login or :cram_md5
-	:domain         => 'fourspots.com'
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "localhost",
+  :authentication => :plain,
+  :user_name => "tintn.hcmute@gmail.com",
+  :password => "maithuongkimhue"
 }

@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
 
   # render new.rhtml
   def new
+
+p cookies[:user_name]
   end
 
   def create

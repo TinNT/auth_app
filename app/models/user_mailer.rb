@@ -16,7 +16,7 @@ class UserMailer < ActionMailer::Base
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"
-      @from        = "ADMINEMAIL"
+      @from        = "tintn.hcmute@gmail.com"
       @subject     = "[YOURSITE] "
       @sent_on     = Time.now
       @body[:user] = user
